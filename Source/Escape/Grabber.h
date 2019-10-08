@@ -7,6 +7,7 @@
 #include "GameFramework/PlayerController.h"
 #include "Components/ActorComponent.h"
 #include "DrawDebugHelpers.h"
+#include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "Grabber.generated.h"
 
 
@@ -31,5 +32,13 @@ private:
 	FVector PlayerViewLocation;
 	FRotator PlayerViewRotation;
 	float Reach = 100.f;
+
+	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+	UInputComponent* InputComponent = nullptr;
+
+	void GrabFunc();
+	void GrabRelease();
+	
+	
 		
 };
